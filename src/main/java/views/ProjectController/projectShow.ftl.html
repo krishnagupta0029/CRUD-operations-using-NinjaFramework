@@ -1,0 +1,22 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "Home page">    
+    
+    
+<#if project??>
+
+    <h1>${project.project_title}</h1>  
+    <p>Description: ${project.project_description}</p>  
+    <a class="btn btn-primary btn-md" href="/delete/${project.id}" role="button">DELETE</a>
+    <a class="btn btn-primary btn-md" href="/update/${project.id}" role="button">UPDATE</a>
+ 
+    
+<#else>
+    
+    <p>Sorry. Post not found. Please go back to <a href="/index">index</a></p>
+    
+</#if>
+    
+
+     
+
+</@layout.myLayout>

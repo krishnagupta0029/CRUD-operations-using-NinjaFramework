@@ -1,0 +1,1 @@
+ALTER TABLE Project MODIFY project_title varchar(200), MODIFY project_description varchar(200);

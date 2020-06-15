@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controllers" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controllers" xmlns:intf="http://controllers" xmlns:tns1="http://ninja" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controllers" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://ninja"/>
+   <element name="login">
+    <complexType>
+     <sequence>
+      <element name="context" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loginResponse">
+    <complexType>
+     <sequence>
+      <element name="loginReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logout">
+    <complexType>
+     <sequence>
+      <element name="context" type="tns1:Context"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logoutResponse">
+    <complexType>
+     <sequence>
+      <element name="logoutReturn" type="tns1:Result"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loginPost">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="rememberMe" type="xsd:boolean"/>
+      <element name="context" type="tns1:Context"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loginPostResponse">
+    <complexType>
+     <sequence>
+      <element name="loginPostReturn" type="tns1:Result"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getcuser">
+    <complexType/>
+   </element>
+   <element name="getcuserResponse">
+    <complexType>
+     <sequence>
+      <element name="getcuserReturn" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="loginPostResponse">
+
+      <wsdl:part element="impl:loginPostResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getcuserRequest">
+
+      <wsdl:part element="impl:getcuser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginPostRequest">
+
+      <wsdl:part element="impl:loginPost" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginResponse">
+
+      <wsdl:part element="impl:loginResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutResponse">
+
+      <wsdl:part element="impl:logoutResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutRequest">
+
+      <wsdl:part element="impl:logout" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginRequest">
+
+      <wsdl:part element="impl:login" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getcuserResponse">
+
+      <wsdl:part element="impl:getcuserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="LoginLogoutController">
+
+      <wsdl:operation name="login">
+
+         <wsdl:input message="impl:loginRequest" name="loginRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loginResponse" name="loginResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout">
+
+         <wsdl:input message="impl:logoutRequest" name="logoutRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logoutResponse" name="logoutResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loginPost">
+
+         <wsdl:input message="impl:loginPostRequest" name="loginPostRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loginPostResponse" name="loginPostResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getcuser">
+
+         <wsdl:input message="impl:getcuserRequest" name="getcuserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getcuserResponse" name="getcuserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LoginLogoutControllerSoapBinding" type="impl:LoginLogoutController">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logoutRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logoutResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loginPost">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginPostRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginPostResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getcuser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getcuserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getcuserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LoginLogoutControllerService">
+
+      <wsdl:port binding="impl:LoginLogoutControllerSoapBinding" name="LoginLogoutController">
+
+         <wsdlsoap:address location="http://localhost:8080/event/services/LoginLogoutController"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
