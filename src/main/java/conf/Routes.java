@@ -68,9 +68,10 @@ public class Routes implements ApplicationRoutes {
         router.GET().route("/article/new").with(ArticleController::articleNew);
       // router.POST().route("/article/new").with(ArticleController::articleNewPost);
        router.POST().route("/article/new").with(ProjectController::projectNewPost);
+       router.GET().route("/show").with(ApplicationController::index1);
        router.GET().route("/allprojects").with(ProjectController::getprojectsJson);
-        router.GET().route("/upload").with(ProjectController::upload);
-        router.POST().route("/upload").with(ProjectController::uploadFinish);
+//        router.GET().route("/upload").with(ProjectController::upload);
+//        router.POST().route("/upload").with(ProjectController::uploadFinish);
         ///////////////////////////////////////////////////////////////////////
         // Create new article
         ///////////////////////////////////////////////////////////////////////

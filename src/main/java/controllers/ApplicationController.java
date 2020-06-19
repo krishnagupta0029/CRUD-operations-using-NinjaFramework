@@ -90,4 +90,21 @@ public class ApplicationController {
                 .render("olderProjects", olderPosts);
 
     }
+    public Result index1() {
+
+        List<Project> frontPost = projectDao.getFirstProjectForFrontPage();
+
+        List<Project> olderPosts = projectDao.getOlderProjectsForFrontPage();
+        Long iid = controller.getcuser();
+        if (iid!= 0L) {
+        	frontPost = null;
+        }
+        Map<String, Object> map = Maps.newHashMap();
+//        map.put("frontProject", frontPost);
+        map.put("olderProjects", olderPosts);
+        return Results.html().template("/views/ApplicationController/show.ftl.html").render("frontProject", frontPost)
+                .render("olderProjects", olderPosts);
+
+    }
+
 }

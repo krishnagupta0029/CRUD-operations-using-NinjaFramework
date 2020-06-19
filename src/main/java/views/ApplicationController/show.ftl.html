@@ -1,0 +1,30 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "Home page">    
+
+<#if frontProject??>
+	<hr/>
+	<h2>Welcome</h2>
+	<hr/>
+	<img src="/assets/images/main.jpeg" alt="Project" style="width:1200px;height:600px;">
+	<#else>
+	<h1>Available Projects</h1>
+</#if>
+<#if olderProjects??>
+    <#list olderProjects as project>
+        <h3>
+            <a href="/article/${project.id}">${project.project_title}</a>    
+        </h3>  
+        <p>Project Description: ${project.project_description}</p>  
+    </#list>
+    <#else>
+    <h2>Welcome! Add some projects</h2>
+    
+</#if>
+
+
+<hr/>
+
+
+
+
+</@layout.myLayout>
